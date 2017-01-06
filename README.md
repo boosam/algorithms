@@ -7,7 +7,7 @@ there will be a README.md file which will provide a brief overview of the projec
 instructions.
 
 The structure of this repo will be:
-* <week_num>-algorithm
+* \<week_num\>-algorithm
   * \<language of solution\>
     * \<person or team\>
       * README on how to run project
