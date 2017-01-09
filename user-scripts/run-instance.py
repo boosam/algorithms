@@ -71,8 +71,12 @@ if instanceId != '':
 	tags = instance.create_tags(
 	    Tags=[ 
 	    	{
-	    		'Key': 'Name', 
+	    		'Key': 'product_name', 
 	    		'Value': 'prg-lvl-up'
+	    	},
+	    	{
+	    		'Key': 'business_unit', 
+	    		'Value': 'cse'
 	    	}
 	    ]
 	)
