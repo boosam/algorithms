@@ -1,5 +1,6 @@
 # Running AWS Command Line Wrapper Scripts
 
+
 ## Requirements
 
 * An AWS account on ESPN-CSE-Sandbox
@@ -36,7 +37,7 @@ Run the following command to enter your credentials that you recieved during you
 
 ### Setup Python SDK
 
-`pip install boto3 --ignore-installed six`
+`sudo pip install boto3 --ignore-installed six`
 
 ## Usage
 
