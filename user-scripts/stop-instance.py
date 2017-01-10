@@ -1,4 +1,4 @@
-#Creates a standard instance for the programming level up project and tags it
+#Stops a programming level up EC2 instance by key name
 
 import boto3
 import botocore
