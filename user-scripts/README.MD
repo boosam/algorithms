@@ -47,7 +47,17 @@ Run the following command to enter your credentials that you recieved during you
 
 ## Usage
 
-###$ Create instance
+### Create instance
 
-python ./run-instance.py -k peand
+`python ./run-instance.py -k peand`
+
+This will create a new instance if none exist under your key name, or restart an instance that has been previously stopped
+
+### Stop instance
+
+`python ./stop-instance.py -k peand`
+
+This will stop your instance (it can be restarted above)
+
+
 
