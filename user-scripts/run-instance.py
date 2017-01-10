@@ -55,6 +55,7 @@ for instance in instances:
 	instanceId = instance.id;
 
 	if instance.state["Name"] == "running":
+		#already running, do nothing
 		print "EC2 instance \x1b[01;33m" + instanceId + "\x1b[00m already running on \x1b[01;34m" + instance.public_ip_address + "\x1b[00m \n\n";
 
 	elif instance.state["Name"] == "stopped":
@@ -65,7 +66,7 @@ for instance in instances:
 		wait_for_instance(instance)
 
 	elif instance.state["Name"] == "stopping":
-		#wait then restart
+		#wait for it to be stopped then restart
 
 		print "EC2 instance \x1b[01;33m" + instanceId + "\x1b[00m is currently being stopped.... \n";
 		print "Waiting for the instance to enter a stopped state.... \n";
@@ -73,6 +74,13 @@ for instance in instances:
 
 		wait_for_instance(instance)
 	
+	elif instance.state["Name"] == "pending":
+		#one is already being set up, so just wait
+
+		print "EC2 instance \x1b[01;33m" + instanceId + "\x1b[00m is already pending.... \n";
+
+		wait_for_instance(instance)
+
 	#after checking states, only create if we are still not running
 	if instance.state["Name"] == "running":
 		isRunning = True;
@@ -86,6 +94,7 @@ if isRunning == False:
 			DryRun=False,
 			MinCount=1,
 			MaxCount=1,
+			SubnetId="subnet-ac5cf9f7",
 			ImageId="ami-9be6f38c",
 			KeyName=keyName,
 			SecurityGroupIds=[
