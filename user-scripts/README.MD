@@ -39,6 +39,12 @@ Run the following command to enter your credentials that you recieved during you
 
 `sudo pip install boto3 --ignore-installed six`
 
+### Set up Key Pair
+
+* Make sure there is key pair imported into the region you will be creating instances
+* AWS Console -> EC2 -> Network & Security -> Key Pairs
+* Import or create a key pair with your CORP username as they key pair name
+
 ## Usage
 
 ###$ Create instance
