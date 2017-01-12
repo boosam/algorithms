@@ -21,6 +21,7 @@ But in general:
   * Pascal style assignment operators ( `a := 42`)
   * variables assigned at a top of a lexical scope, inside `||` (`|in out res|`)
   * everything is a message on an object, including looping and `if` statements
+  * block / lambdas are like this: `[ :inputParameter | inputParameter + 1]`
 
 
 About my implementation of RandomSearch
