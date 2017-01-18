@@ -49,13 +49,13 @@ Run the following command to enter your credentials that you recieved during you
 
 ### Create instance
 
-`python ./run-instance.py -k peand`
+`python ./run-instance.py -k [CORP USERNAME]`
 
 This will create a new instance if none exist under your key name, or restart an instance that has been previously stopped
 
 ### Stop instance
 
-`python ./stop-instance.py -k peand`
+`python ./stop-instance.py -k [CORP USERNAME]`
 
 This will stop your instance (it can be restarted above)
 
