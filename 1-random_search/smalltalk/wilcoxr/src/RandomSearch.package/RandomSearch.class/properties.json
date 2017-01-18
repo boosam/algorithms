@@ -1,0 +1,15 @@
+{
+	"category" : "RandomSearch",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "RyanWilcox 1/10/2017 11:57",
+	"instvars" : [
+		"candidateEvaluator",
+		"candidateCreator" ],
+	"name" : "RandomSearch",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
