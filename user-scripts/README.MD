@@ -47,7 +47,7 @@ Run the following command to enter your credentials that you recieved during you
 
 ## Usage
 
-### Create instance
+### Create/Run instance
 
 `python ./run-instance.py -k [CORP USERNAME]`
 
