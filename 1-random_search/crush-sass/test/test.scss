@@ -1,0 +1,27 @@
+@import "true";
+@import "main.scss";
+
+@include test-module('randomSearch') {
+  @include test('Should return a number') {
+    $numTimes: 10;
+    $list: (1,2,3,4,5);
+    
+    $test: randomSearch($list, $numTimes);
+    
+    @include assert-true(type-of($test), "number");
+  }
+  @include test('Should find the largest number with large number of iterations') {
+    $numTimes: 100000; // lots of iterations
+    $list: (1, -2, 7, 3, -8, 4, 2, 8, 10, 3, -1, -4, 9, -5);
+    $expect: 10; // For lots of iterations, we expect to get 10 just about everytime
+    
+    $test: randomSearch($list, $numTimes);
+    
+    @include assert-equal($test, $expect);
+  }
+}
+
+// Optionally show summary report in CSS and/or the command line:
+// - If you use Mocha, reporting to the command line is automatic.
+// - if you use true-cli, report(terminal) is required for output.
+@include report;
