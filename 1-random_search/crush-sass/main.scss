@@ -1,0 +1,26 @@
+@function compare($thing1, $thing2){
+  @if ($thing1 == null or $thing2 > $thing1) {
+    @return 1;
+  } @else {
+    @return -1;
+  }
+}
+
+@function randomSearch($haystack, $timesTillWeGiveUp){
+  $bestSoFar: null;
+  @for $i from 0 to $timesTillWeGiveUp {
+    $random: findRandom($haystack);
+    @if (compare($bestSoFar, $random) > 0) {
+      $bestSoFar: $random;
+    }
+  }
+  @return $bestSoFar;
+}
+
+@function findRandom($haystack){
+  @return nth($haystack, random(length($haystack)));
+}
+
+// Testing debug
+$list: (1, 7, 3, 4, 2, 8, 10, 3, -1, 9);
+@debug randomSearch($list, 100);
