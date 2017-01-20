@@ -11,7 +11,7 @@ $ docker run random_search
 ```
 
 ```bash
-$ docker run random_search /bin/sh -c "go run random_search.go -i 30 -max 3333 -min -12 -s 762 -t 300"
+$ docker run random_search /bin/sh -c "go run random_search.go -i 5000 -max 3333 -min -1200 -s 762 -t 300"
 ```
 
 ## Options
