@@ -59,7 +59,7 @@ func search(iterations, timeLimit, minRange, maxRange, solutionValue int) int {
 // Print formatted table to stdout
 func printTable() {
 	data := [][]string{
-		[]string{"Total iterations", strconv.Itoa(iterations)},
+		[]string{"Total Iterations", strconv.Itoa(iterations)},
 		[]string{"Iterations Ran", strconv.Itoa(currentIteration)},
 		[]string{"Time Limit", time.Duration.String(time.Duration(timeLimit) * 1000)},
 		[]string{"Elapsed Time", time.Duration.String(endTime)},
@@ -83,7 +83,7 @@ func main() {
 		solutionValue = getRand()
 	}
 
-	// 
+	// Create channel for separate data stream
 	searchChan := make(chan int)
 
 	// Concurrently iterate over algorithm
