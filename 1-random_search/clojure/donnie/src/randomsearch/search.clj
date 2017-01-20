@@ -5,7 +5,6 @@
          (* x (exp x (dec n)))))
 
 (def MaxIterations)
-(def MaxSampleSize)
 (def CurrentResult)
 (def BestResult)
 
