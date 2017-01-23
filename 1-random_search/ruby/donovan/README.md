@@ -21,7 +21,7 @@ Follow the prompts and enter value via keyboard, press 'Enter'
 * Modify script to work with coordinates
 
 ## Useful Links
-[Random Search Algorithm](http://www.cleveralgorithms.com/nature-inspired/stochastic/random_search.html)
-[RVM Troubleshooting 1](https://github.com/rvm/rvm/issues/3863)
-[RVM Troubleshooting 2](https://github.com/rvm/rvm/issues/3744)
-[RVM Troubleshooting 3](https://github.com/rvm/rvm/issues/3863)
+* [Random Search Algorithm](http://www.cleveralgorithms.com/nature-inspired/stochastic/random_search.html)
+* [RVM Troubleshooting 1](https://github.com/rvm/rvm/issues/3863)
+* [RVM Troubleshooting 2](https://github.com/rvm/rvm/issues/3744)
+* [RVM Troubleshooting 3](https://github.com/rvm/rvm/issues/3863)
