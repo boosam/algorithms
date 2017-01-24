@@ -9,17 +9,35 @@ raise ArgumentError.new("A sample space needs to be provided such 6 8 40 ...") i
 puts "Sample space is #{arr_args}"
 
 #Converts the string input to a array of integers
-arr_samplespace = arr_args.map { |i| i.to_i }
+arr_searchspace = arr_args.map { |i| i.to_i }
 
-puts "Sample space after converting to int #{arr_samplespace}"
+puts "Sample space after converting to int #{arr_searchspace}"
 
 
-#Method to return the minimum value of a give integer array
-def search(arr_samplespace) 
+#random search
+def random_search(arr_searchspace, iteration) 
 
-	if arr_samplespace.length == 0
+	if arr_searchspace.length == 0
 		return nil
     end 
+
+    best = arr_searchspace.first
+  
+    for i in 0..iteration
+      candidate_solution = get_random_solution(random_items(arr_searchspace))#will check a sample of problem space
+	  
+	  if best > candidate_solution
+	  	best = candidate_solution
+	  end 
+	end
+
+   return best
+end
+
+#Method to return the minimum value of a give integer array
+def get_random_solution(arr_samplespace) 
+
+    puts "Sample space #{arr_samplespace}"
 
     best = arr_samplespace.first
 
@@ -32,7 +50,16 @@ def search(arr_samplespace)
    return best
 end
 
-result = search(arr_samplespace)
+def random_items(array)
+  array.sample(1 + rand(array.count))
+end
+
+
+#puts "How many times should I search ? "
+#num_iterations = gets.chomp
+num_iterations = 5
+
+result = random_search(arr_searchspace, num_iterations)
 
 	if result == nil
 		puts "Empty sample space"
