@@ -14,7 +14,7 @@ random.search <- function (random.selections) {
 lowest <- random.search(sample.list) # store the lowest value globally (to graph
 
 graph.results <- function() {
-  png(paste("output/", format(Sys.time(),"%m_%d_%Y-%H_%M_%S"),".png"),width=1600,height=900) # start image cap
+  png(paste("output/", format(Sys.time(),"%m_%d_%Y-%H_%M_%S"),".png",sep=""),width=1600,height=900) # start image cap
   par(usr=c(0, sample.size, number.range.min, number.range.max),pch=16,cex=0.85,bg="#DDDDDD") # graph parameters
   plot(number.list, type="p") # graph the full number set in black
   par(cex=1.25)
