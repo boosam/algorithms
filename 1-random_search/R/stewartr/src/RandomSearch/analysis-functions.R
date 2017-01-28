@@ -11,7 +11,7 @@ sample.list <- sample(number.list, sample.size) # get a set of random data to se
 random.search <- function (random.selections) {
   min(random.selections) #return lowest value
 } 
-lowest <- random.search(sample.list) # store the lowest value globally (to graph
+lowest <- random.search(sample.list) # store the lowest value globally (to graph)
 
 graph.results <- function() {
   png(paste("output/", format(Sys.time(),"%m_%d_%Y-%H_%M_%S"),".png",sep=""),width=1600,height=900) # start image cap
