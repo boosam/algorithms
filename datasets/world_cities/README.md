@@ -24,7 +24,7 @@ To use it locally, execute the following docker command:
 ```
 docker run -d -p <available local port>:8000 rdr.prod.internal.geo.espn.com/espnautomation/prg-lvl-up:2
 ```
-To use the aws cli with the local instance, be sure to include **--endpoint-url='localhost:\<available local port\>'** to each command.
+To use the aws cli with the local instance, be sure to include **--endpoint-url='http://localhost:\<available local port\>'** to each command.
 
 ## Haversine Function
 The Haversine function is used to calculate the distance between two points on a sphere.  **Make sure that you convert to Radians before entering any of the values into the trig functions (sin,cos,atan2).**
