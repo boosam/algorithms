@@ -1,9 +1,9 @@
 # WorldCities Dataset
 
-This dataset contains many of the world's cities.  This set has any malformed or corrupted rows removed.  The total number of cities in this data set is ~2.9 million.  This dataset has been loaded into dynamodb.  Dynamodb is a schemaless key/value store.  However, it does require one field be made as the partition key.  The partition key is equivalent to a primay key in an RDBMS.
+This dataset contains many of the world's cities.  This set has any malformed or corrupted rows removed.  The total number of cities in this data set is ~2.9 million.  This dataset has been loaded into dynamodb.  Dynamodb is a schemaless key/value store.  However, it does require one field be made as the partition key.  The partition key is equivalent to a primary key in an RDBMS.
 
 ## Schema
-The partion key (and the way you will access records) is "ID" of type "Number".  It is unique auto-incremented value.  All fields are optional (besides ID).  The schema of the data is:
+The partition key (and the way you will access records) is "ID" of type "Number".  It is unique auto-incremented value.  All fields are optional (besides ID).  The schema of the data is:
 
 ```
 {
@@ -19,12 +19,17 @@ The partion key (and the way you will access records) is "ID" of type "Number". 
 ```
 
 ## Location of the Data
-The data exists in AWS us-east-1 in the WorldCities table.  It also exists in the following Docker image.  While you can, do not build the docker image.  The write performance of the local Dynamo instance is not awesome. The location of the docker image is: **coming soon** 
+The data exists in AWS us-east-1 in the WorldCities table.  It also exists in the following Docker image.  While you can, do not build the docker image.  The write performance of the local Dynamo instance is not awesome. The location of the docker image is: rdr.prod.internal.geo.espn.com/espnautomation/prg-lvl-up:2.
+To use it locally, execute the following docker command:
+```
+docker run -d -p <available local port>:8000 rdr.prod.internal.geo.espn.com/espnautomation/prg-lvl-up:2
+```
+To use the aws cli with the local instance, be sure to include **--endpoint-url='localhost:\<available local port\>'** to each command.
 
 ## Haversine Function
 The Haversine function is used to calculate the distance between two points on a sphere.  **Make sure that you convert to Radians before entering any of the values into the trig functions (sin,cos,atan2).**
 
-The function in its mathmatical form:
+The function in its mathematical form:
 ```
 a = sin²(Δφ/2) + cos φ1 ⋅ cos φ2 ⋅ sin²(Δλ/2)
 c = 2 ⋅ atan2( √a, √(1−a) )
