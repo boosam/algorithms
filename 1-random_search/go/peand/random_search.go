@@ -22,7 +22,7 @@ func main() {
 	svc := dynamodb.New(session.New(&aws.Config{Region: aws.String("us-east-1")}))
 	
 	for i := 0; i < NumIterations; i++ {
-		rand.Seed(time.Now().Unix())
+		rand.Seed(time.Now().UnixNano())
 		randomId := rand.Intn(2895921)
 
 		params := &dynamodb.GetItemInput{
@@ -48,7 +48,7 @@ func main() {
 				bestItem = oneItem
 				bestDistance = distance
 			}
-
+			//log.Println( oneItem.CityName )
 	    	//log.Println( distance )
 	    }
 	}
