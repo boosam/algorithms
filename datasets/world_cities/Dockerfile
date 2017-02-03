@@ -33,7 +33,9 @@ RUN mkdir -p /opt/espn/apps/dynamo && \
       --attribute-definitions AttributeName=ID,AttributeType=N \
       --provisioned-throughput ReadCapacityUnits=100,WriteCapacityUnits=100 \
       --endpoint-url http://localhost:8000 && \
-  ./load_cities.py
+  ./load_cities.py && \
+  printf '#!/bin/bash\njava -Xmx5G -Djava.library.path=/opt/espn/apps/dynamo/DynamoDBLocal_lib -jar /opt/espn/apps/dynamo/DynafmoDBLocal.jar -sharedDb -dbPath /opt/espn/data/dynamo/ ' > start.sh && \
+  chmod 700 start.sh
 
 EXPOSE 8000
 
