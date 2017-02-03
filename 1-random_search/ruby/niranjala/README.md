@@ -20,10 +20,10 @@
     gem install aws-sdk
     ```
 
-# To Run the Programe
+# To Run the Script
 
  ```
- run   > ruby randomsearch.rb from the command line
+ ruby randomsearch.rb #from the command line
  ```
 
 For now the program is hard coded to the find the closed city to bristol 
